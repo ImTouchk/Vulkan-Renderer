@@ -3,6 +3,7 @@
   <ItemGroup>
     <ClCompile Include="Source\main.cpp" />
     <ClCompile Include="Source\Instance.cpp" />
+    <ClCompile Include="Source\PhysicalDevice.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Include\Definitions.h" />

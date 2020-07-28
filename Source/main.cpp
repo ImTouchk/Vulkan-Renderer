@@ -5,8 +5,16 @@ GLFWwindow* g_Window = nullptr;
 int g_WinWidth = 800;
 int g_WinHeight = 600;
 
+bool g_ShouldTerminate = false;
+
 void Initialize() {
 	CreateInstance();
+	SetupDebugMessenger();
+}
+
+void Destroy() {
+	DestroyDebugMessenger();
+	DestroyInstance();
 }
 
 int main() {
@@ -28,6 +36,8 @@ int main() {
 	while (!glfwWindowShouldClose(g_Window)) {
 		glfwPollEvents();
 	}
+
+	Destroy();
 
 	glfwDestroyWindow(g_Window);
 	glfwTerminate();

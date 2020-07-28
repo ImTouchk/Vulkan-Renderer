@@ -7,15 +7,30 @@
 #include <iostream>
 #include <vector>
 
-extern GLFWwindow* g_Window;
+//
+extern VkDebugUtilsMessengerEXT g_DebugMessenger;
+extern VkInstance g_Instance;
 
 extern bool g_InstanceCreated;
-extern VkInstance g_Instance;
+
+extern VkPhysicalDevice g_PhysicalDevice;
+
+//
+extern bool g_ShouldTerminate;
+
+//
+extern GLFWwindow* g_Window;
 
 extern int g_WinHeight;
 extern int g_WinWidth;
 
+//
 void CreateInstance();
 void DestroyInstance();
+
+void SetupDebugMessenger();
+void DestroyDebugMessenger();
+
+void PickPhysicalDevice();
 
 #endif
