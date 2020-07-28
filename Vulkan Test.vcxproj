@@ -121,7 +121,7 @@
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp17</LanguageStandard>
-      <AdditionalIncludeDirectories>D:\Development\Vulkan SDK\1.2.141.2\Include;D:\Development\C++\Projects\Vulkan-Test\External\glm;D:\Development\C++\Projects\Vulkan-Test\External\glfw\include;D:\Development\C++\Projects\Vulkan-Test\External\glad;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\Development\Vulkan SDK\1.2.141.2\Include;D:\Development\C++\Projects\Vulkan-Test\External\glm;D:\Development\C++\Projects\Vulkan-Test\External\glfw\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -139,7 +139,7 @@
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp17</LanguageStandard>
-      <AdditionalIncludeDirectories>D:\Development\Vulkan SDK\1.2.141.2\Include;D:\Development\C++\Projects\Vulkan-Test\External\glm;D:\Development\C++\Projects\Vulkan-Test\External\glfw\include;D:\Development\C++\Projects\Vulkan-Test\External\glad;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\Development\Vulkan SDK\1.2.141.2\Include;D:\Development\C++\Projects\Vulkan-Test\External\glm;D:\Development\C++\Projects\Vulkan-Test\External\glfw\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -151,8 +151,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="External\glad.c" />
+    <ClCompile Include="Source\Instance.cpp" />
     <ClCompile Include="Source\main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Include\Definitions.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
