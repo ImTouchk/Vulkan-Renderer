@@ -2,7 +2,6 @@
 
 VkPhysicalDevice g_PhysicalDevice = VK_NULL_HANDLE;
 
-QueueFamilyIndices FindQueueFamilies(VkPhysicalDevice Device);
 bool IsDeviceSuitable(VkPhysicalDevice Device);
 
 void PickPhysicalDevice() {
@@ -24,9 +23,11 @@ void PickPhysicalDevice() {
 	}
 
 	if (g_PhysicalDevice == VK_NULL_HANDLE) {
-		std::cout << "[ERROR] Failed to fiind a suitable GPU." << std::endl;
+		std::cout << "[ERROR] Failed to find a suitable GPU." << std::endl;
 		g_ShouldTerminate = true;
 		return;
+	} else {
+		std::cout << "[INFO] Succesfully picked a physical device." << std::endl;
 	}
 }
 

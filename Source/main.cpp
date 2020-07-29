@@ -10,9 +10,12 @@ bool g_ShouldTerminate = false;
 void Initialize() {
 	CreateInstance();
 	SetupDebugMessenger();
+	PickPhysicalDevice();
+	CreateLogicalDevice();
 }
 
 void Destroy() {
+	DestroyLogicalDevice();
 	DestroyDebugMessenger();
 	DestroyInstance();
 }

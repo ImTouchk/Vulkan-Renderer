@@ -4,10 +4,11 @@
 VkDebugUtilsMessengerEXT g_DebugMessenger;
 VkInstance g_Instance;
 
+bool g_UseValidationLayers;
 bool g_InstanceCreated;
 
 // Internal variable declarations
-std::vector<const char*> ValidationLayers = {
+std::vector<const char*> g_ValidationLayers = {
 	"VK_LAYER_KHRONOS_validation"
 };
 
@@ -44,8 +45,8 @@ void CreateInstance() {
 	VkDebugUtilsMessengerCreateInfoEXT DebugInfo;
 
 	if (UseValidationLayers && CheckLayerSupport()) {
-		CreateInfo.enabledLayerCount = static_cast<unsigned int>(ValidationLayers.size());
-		CreateInfo.ppEnabledLayerNames = ValidationLayers.data();
+		CreateInfo.enabledLayerCount = static_cast<unsigned int>(g_ValidationLayers.size());
+		CreateInfo.ppEnabledLayerNames = g_ValidationLayers.data();
 
 		PopulateMessengerCreateInfo(DebugInfo);
 		CreateInfo.pNext = (VkDebugUtilsMessengerCreateInfoEXT*)&DebugInfo;
@@ -98,11 +99,11 @@ bool CheckLayerSupport() {
 	std::vector<VkLayerProperties> Layers(LayerCount);
 	vkEnumerateInstanceLayerProperties(&LayerCount, Layers.data());
 
-	for (unsigned i = 0; i < ValidationLayers.size(); i++) {
+	for (unsigned i = 0; i < g_ValidationLayers.size(); i++) {
 		bool LayerFound = false;
 
 		for (unsigned j = 0; j < Layers.size(); j++) {
-			if (strcmp(ValidationLayers[i], Layers[j].layerName) == 0) {
+			if (strcmp(g_ValidationLayers[i], Layers[j].layerName) == 0) {
 				LayerFound = true;
 				break;
 			}

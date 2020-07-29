@@ -152,6 +152,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Source\Instance.cpp" />
+    <ClCompile Include="Source\LogicalDevice.cpp" />
     <ClCompile Include="Source\main.cpp" />
     <ClCompile Include="Source\PhysicalDevice.cpp" />
   </ItemGroup>

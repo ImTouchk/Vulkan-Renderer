@@ -12,6 +12,8 @@
 extern VkDebugUtilsMessengerEXT g_DebugMessenger;
 extern VkInstance g_Instance;
 
+extern std::vector<const char*> g_ValidationLayers;
+extern bool g_UseValidationLayers;
 extern bool g_InstanceCreated;
 
 //
@@ -21,7 +23,10 @@ struct QueueFamilyIndices {
 	std::optional<unsigned int> graphicsFamily;
 };
 
+QueueFamilyIndices FindQueueFamilies(VkPhysicalDevice Device);
+
 //
+extern VkQueue g_GraphicsQueue;
 extern VkDevice g_Device;
 
 //
@@ -41,5 +46,8 @@ void SetupDebugMessenger();
 void DestroyDebugMessenger();
 
 void PickPhysicalDevice();
+
+void CreateLogicalDevice();
+void DestroyLogicalDevice();
 
 #endif

@@ -4,6 +4,7 @@
     <ClCompile Include="Source\main.cpp" />
     <ClCompile Include="Source\Instance.cpp" />
     <ClCompile Include="Source\PhysicalDevice.cpp" />
+    <ClCompile Include="Source\LogicalDevice.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Include\Definitions.h" />
