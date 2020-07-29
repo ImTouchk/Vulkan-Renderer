@@ -5,6 +5,7 @@
 #include <GLFW\glfw3.h>
 
 #include <iostream>
+#include <optional>
 #include <vector>
 
 //
@@ -13,7 +14,15 @@ extern VkInstance g_Instance;
 
 extern bool g_InstanceCreated;
 
+//
 extern VkPhysicalDevice g_PhysicalDevice;
+
+struct QueueFamilyIndices {
+	std::optional<unsigned int> graphicsFamily;
+};
+
+//
+extern VkDevice g_Device;
 
 //
 extern bool g_ShouldTerminate;
