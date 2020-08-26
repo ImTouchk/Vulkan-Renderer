@@ -1,17 +1,21 @@
 #include "..\Include\Definitions.h"
 
-// External variables declarations
+// External variable declarations
 VkDebugUtilsMessengerEXT g_DebugMessenger;
 VkInstance g_Instance;
 
 bool g_UseValidationLayers;
 bool g_InstanceCreated;
 
-// Internal variable declarations
 std::vector<const char*> g_ValidationLayers = {
 	"VK_LAYER_KHRONOS_validation"
 };
 
+std::vector<const char*> g_DeviceExtensions = {
+	VK_KHR_SWAPCHAIN_EXTENSION_NAME
+};
+
+// Internal variable declarations
 bool UseValidationLayers = true;
 
 // Function declarations
@@ -59,7 +63,6 @@ void CreateInstance() {
 		g_ShouldTerminate = true;
 		g_InstanceCreated = false;
 	} else {
-		std::cout << "[INFO] Vulkan instance created." << std::endl;
 		g_InstanceCreated = true;
 	}
 }
@@ -164,7 +167,9 @@ void PopulateMessengerCreateInfo(VkDebugUtilsMessengerCreateInfoEXT& CreateInfo)
 
 // Debug callback
 VKAPI_ATTR VkBool32 VKAPI_CALL DebugCallback(VkDebugUtilsMessageSeverityFlagBitsEXT Severity, VkDebugUtilsMessageTypeFlagsEXT Type, const VkDebugUtilsMessengerCallbackDataEXT* CallbackData, void* UserData) {
-	std::cerr << "[ERROR] VALIDATION LAYER: " << CallbackData->pMessage << std::endl;
+	if (Severity >= VK_DEBUG_UTILS_MESSAGE_SEVERITY_WARNING_BIT_EXT) {
+		std::cerr << "[ERROR] VALIDATION LAYER: " << CallbackData->pMessage << std::endl;
+	}
 
 	return VK_FALSE;
 }

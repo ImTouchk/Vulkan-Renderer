@@ -5,6 +5,20 @@
     <ClCompile Include="Source\Instance.cpp" />
     <ClCompile Include="Source\PhysicalDevice.cpp" />
     <ClCompile Include="Source\LogicalDevice.cpp" />
+    <ClCompile Include="Source\Surface.cpp" />
+    <ClCompile Include="Source\SwapChain.cpp" />
+    <ClCompile Include="Source\ImageViews.cpp" />
+    <ClCompile Include="Source\Pipeline.cpp" />
+    <ClCompile Include="Source\Shader.cpp" />
+    <ClCompile Include="Source\RenderPass.cpp" />
+    <ClCompile Include="Source\Framebuffers.cpp" />
+    <ClCompile Include="Source\CommandPool.cpp" />
+    <ClCompile Include="Source\CommandBuffers.cpp" />
+    <ClCompile Include="Source\Semaphores.cpp" />
+    <ClCompile Include="Source\VertexBuffer.cpp" />
+    <ClCompile Include="Source\IndexBuffer.cpp" />
+    <ClCompile Include="Source\UniformBuffer.cpp" />
+    <ClCompile Include="Source\Depth.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Include\Definitions.h" />

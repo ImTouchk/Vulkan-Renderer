@@ -79,7 +79,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
     <OutDir>$(SolutionDir)Build\$(Configuration)\</OutDir>
-    <IntDir>Build\$(Configuration)\Intermediate</IntDir>
+    <IntDir>Build\$(Configuration)\Intermediate\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
@@ -121,12 +121,12 @@
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp17</LanguageStandard>
-      <AdditionalIncludeDirectories>D:\Development\Vulkan SDK\1.2.141.2\Include;D:\Development\C++\Projects\Vulkan-Test\External\glm;D:\Development\C++\Projects\Vulkan-Test\External\glfw\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\Development\Vulkan SDK\1.2.148.1\Include;D:\Development\C++\Projects\Vulkan-Test\External\glm;D:\Development\C++\Projects\Vulkan-Test\External\glfw\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>D:\Development\Vulkan SDK\1.2.141.2\Lib;D:\Development\C++\Projects\Vulkan-Test\External\glfw\lib-vc2019;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>D:\Development\Vulkan SDK\1.2.148.1\Lib;D:\Development\C++\Projects\Vulkan-Test\External\glfw\lib-vc2019;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>vulkan-1.lib;glfw3.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
@@ -151,13 +151,31 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Source\CommandPool.cpp" />
+    <ClCompile Include="Source\Depth.cpp" />
+    <ClCompile Include="Source\UniformBuffer.cpp" />
+    <ClCompile Include="Source\Framebuffers.cpp" />
+    <ClCompile Include="Source\ImageViews.cpp" />
+    <ClCompile Include="Source\IndexBuffer.cpp" />
     <ClCompile Include="Source\Instance.cpp" />
     <ClCompile Include="Source\LogicalDevice.cpp" />
     <ClCompile Include="Source\main.cpp" />
     <ClCompile Include="Source\PhysicalDevice.cpp" />
+    <ClCompile Include="Source\Pipeline.cpp" />
+    <ClCompile Include="Source\RenderPass.cpp" />
+    <ClCompile Include="Source\Semaphores.cpp" />
+    <ClCompile Include="Source\Shader.cpp" />
+    <ClCompile Include="Source\Surface.cpp" />
+    <ClCompile Include="Source\SwapChain.cpp" />
+    <ClCompile Include="Source\VertexBuffer.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Include\Definitions.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Source\CommandBuffers.cpp">
+      <FileType>Document</FileType>
+    </ClCompile>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
